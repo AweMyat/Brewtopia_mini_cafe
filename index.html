@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewtopia Café</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstraps -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="miniweb(java).js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="miniweb(css).css">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="brew.png" alt="Brewtopia Logo">
+                <span style="font-family: 'Pacifico', cursive;">Brewtopia</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                    <!-- Dropdown menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                            <li><a class="dropdown-item" href="#order-calculator">Ordering</a></li>
+                            <li><a class="dropdown-item" href="#calorie-calculator">Calorie Calculator</a></li>
+                            <li><a class="dropdown-item" href="#cus-review">Reviews</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="#" class="btn btn-order">Order Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tab-content mt-5" style="font-family: 'Poppins', sans-serif;">
+        <div class="tab-pane active" role="tabpanel" style="margin-bottom: 80px;">
+            <div class="container p-5 bg-light rounded-3 mt-3">
+                <h1 class="big-title">Welcome to Brewtopia cafe!</h1>
+                <div class="small-title">
+                    <p>Sweet bakes. Soft vibes. Always made with love.</p>
+                </div>
+                <div class="alert mt-3" style="background: linear-gradient(to bottom right, #ffdae7, #f2f9ea);">
+                    <strong>SPECIAL OFFER</strong>
+                    <p class="mt-2">20% discount for 10 first customers every Tuesday</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu section -->
+        <section id="menu-section">
+            <div class="section">
+                <div class="container mt-5">
+                    <h2 class="mb-4" style="text-align: center; color:#C44569;">☕︎ Menu</h2>
+                    <!-- Row 1 -->
+                    <div class="row">
+                        <!-- Latte -->
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Latte</h4>
+                                </div>
+                                <div class="card-body">
+                                    <img src="Latte.jpg" alt="Latte" class="card-img-top">
+                                    <p class="price">$5</p>
+                                    <button onclick="addToOrder(5, 'Latte')">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Matcha -->
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Matcha</h4>
+                                    <span class="badge"
+                                        style="position: absolute; top: 10px; left: 10px; background-color: #f2f9ea; color: #F5A3B7; padding: 10px; border-radius: 10px; font-size: 15px;">Best
+                                        Seller</span>
+                                </div>
+                                <div class="card-body">
+                                    <img src="Matcha.jpg" alt="Matcha" class="card-img-top">
+                                    <p class="price">$10</p>
+                                    <button onclick="addToOrder(10, 'Matcha')">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bubble Tea -->
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Bubble Tea</h4>
+                                </div>
+                                <div class="card-body">
+                                    <img src="Bubbletea.jpg" alt="Bubble Tea" class="card-img-top">
+                                    <p class="price">$8</p>
+                                    <button onclick="addToOrder(8, 'Bubble Tea')">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="row mt-5">
+                        <!-- Cheesecake -->
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Cheesecake</h4>
+                                </div>
+                                <div class="card-body">
+                                    <img src="Cheesecake.jpg" alt="Cheesecake" class="card-img-top">
+                                    <p class="price">$15</p>
+                                    <button onclick="addToOrder(15, 'Cheesecake')">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Red Velvet Cake -->
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Red Velvet Cake</h4>
+                                </div>
+                                <div class="card-body">
+                                    <img src="Redvelvetcake.jpg" alt="Red Velvet Cake" class="card-img-top">
+                                    <p class="price">$8</p>
+                                    <button onclick="addToOrder(8, 'Red Velvet Cake')">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tiramisu -->
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Tiramisu</h4>
+                                    <span class="badge"
+                                        style="position: absolute; top: 10px; left: 10px; background-color: #f2f9ea; color: #F5A3B7; padding: 10px; border-radius: 10px; font-size: 15px;">Best
+                                        Seller</span>
+                                </div>
+                                <div class="card-body">
+                                    <img src="Tiramisu.jpg" alt="Tiramisu" class="card-img-top">
+                                    <p class="price">$8</p>
+                                    <button onclick="addToOrder(8, 'Tiramisu')">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Calculator -->
+        <section id="order-calculator">
+            <div class="section container my-5 p-4 rounded shadow"
+                style="background-color: #FFF1F4; border: 1px solid #f4dbe4;">
+                <h2 class="mb-3" style="color: #C44569;">✎ Your Order</h2>
+
+                <ul id="orderList" style="list-style: none; padding-left: 0; color: #D87590; font-weight: 500;"></ul>
+
+                <p style="font-size: 1.2rem; margin-top: 1rem;">
+                    <strong style="color: #C44569;">Total:</strong>
+                    <span style="color: #D87590;">$<span id="orderTotal">0</span></span>
+                </p>
+            </div>
+
+            <!-- Temperature Converter -->
+            <div class="section container my-5 p-4 rounded shadow"
+                style="background-color: #FFF1F4; border: 1px solid #f4dbe4;">
+                <h2 class="mb-3" style="color: #C44569;">🌡 Drink Temperature Converter</h2>
+
+                <div class="mb-3">
+                    <input type="number" id="tempInput" class="form-control" placeholder="Enter temperature"
+                        style="border-color: #F7C7D3; border-radius: 10px;">
+                </div>
+
+                <div class="mb-3">
+                    <select id="tempUnit" class="form-select" style="border-color: #F7C7D3; border-radius: 10px;">
+                        <option value="C">Celsius</option>
+                        <option value="F">Fahrenheit</option>
+                    </select>
+                </div>
+                <button onclick="convertTemp()" class="btn"
+                    style="background-color: #C44569; color: white; border-radius: 10px;">Convert</button>
+
+                <p id="tempResult" class="mt-3" style="color: #D87590; font-weight: 500;"></p>
+            </div>
+
+        </section>
+        <div class="section" id="calorie-calculator">
+            <!-- Calorie calculator -->
+            <div class="container">
+                <div class="row">
+                    <!-- drinks  -->
+                    <div class="col-lg-6 mt-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <img src="drink.svg" alt="" id="drinksvg">
+                                        <b>Types of Drinks</b>
+                                    </td>
+                                    <td>
+                                        <img src="kcal,svg.png" alt="" id="calsvg">
+                                        <b>Calories</b>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- latte  -->
+                                <tr id="latte">
+                                    <td>
+                                        <h6 class="mt-2"><b>Latte</b></h6>
+                                        <img src="Latte.jpg" alt="Latte" id="imglatte" style="margin-bottom: 15px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="drink_1" placeholder="Type the quantity"
+                                            class="form-control bg-light">
+                                        <button class="btn mt-3" onclick="latteCalo()" id="buttonD">Calculate</button>
+                                        <button class="btn mt-3" onclick="latteAdd()" id="buttonD">Add to total
+                                            list</button>
+                                        <button class="btn mt-3" onclick="latteRestart()" id="buttonD">Restart</button>
+                                        <p class="fs-5" id="text_1"></p>
+                                    </td>
+                                </tr>
+
+                                <!-- matcha  -->
+                                <tr id="Matcha">
+                                    <td>
+                                        <h6 class="mt-2"><b>Matcha</b></h6>
+                                        <img src="Matcha.jpg" alt="Matcha" id="imgmatcha" style="margin-bottom: 15px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="drink_2" placeholder="Type the quantity"
+                                            class="form-control bg-light">
+                                        <button class="btn mt-3" onclick="MatchaCalo()" id="buttonD">Calculate</button>
+                                        <button class="btn mt-3" onclick="MatchaAdd()" id="buttonD">Add to total
+                                            list</button>
+                                        <button class="btn mt-3" onclick="MatchaRestart()" id="buttonD">Restart</button>
+                                        <p class="fs-5" id="text_2"></p>
+                                    </td>
+                                </tr>
+
+                                <!-- bubble tea  -->
+                                <tr id="Bubble_tea">
+                                    <td>
+                                        <h6 class="mt-2"><b>Bubble tea</b></h6>
+                                        <img src="Bubbletea.jpg" alt="Bubble Tea" id="imgbubble"
+                                            style="margin-bottom: 15px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="drink_3" placeholder="Type the quantity"
+                                            class="form-control bg-light">
+                                        <button class="btn mt-3" onclick="BubbleCalo()" id="buttonD">Calculate</button>
+                                        <button class="btn mt-3" onclick="BubbleAdd()" id="buttonD">Add to total
+                                            list</button>
+                                        <button class="btn mt-3" onclick="BubbleRestart()" id="buttonD">Restart</button>
+                                        <p class="fs-5" id="text_3"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- cake  -->
+                    <div class="col-lg-6 mt-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <img src="slice-of-cake.svg" alt="" id="cakesvg">
+                                        <b>Types of Cake</b>
+                                    </td>
+                                    <td>
+                                        <img src="kcal,svg.png" alt="" id="calsvg">
+                                        <b>Calories</b>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Cheesecake -->
+                                <tr id="Cheesecake">
+                                    <td>
+                                        <h6 class="mt-2"><b>Cheesecake</b></h6>
+                                        <img src="Cheesecake.jpg" alt="Cheese Cake" id="imgcheesecake"
+                                            style="margin-bottom: 15px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="cake_1" placeholder="Type the quantity"
+                                            class="form-control bg-light">
+                                        <button class="btn mt-3" onclick="CheeseCalo()" id="buttonC">Calculate</button>
+                                        <button class="btn mt-3" onclick="CheeseAdd()" id="buttonC">Add to total
+                                            list</button>
+                                        <button class="btn mt-3" onclick="CheeseRestart()" id="buttonC">Restart</button>
+                                        <p class="fs-5" id="text_4"></p>
+                                    </td>
+                                </tr>
+
+                                <!-- Red velvet cake  -->
+                                <tr id="rv_cake">
+                                    <td>
+                                        <h6 class="mt-2"><b>Red velvet cake</b></h6>
+                                        <img src="Redvelvetcake.jpg" alt="Red Velvet Cake" id="imgrvc"
+                                            style="margin-bottom: 15px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="cake_2" placeholder="Type the quantity"
+                                            class="form-control bg-light">
+                                        <button class="btn mt-3" onclick="rvCalo()" id="buttonC">Calculate</button>
+                                        <button class="btn mt-3" onclick="rvAdd()" id="buttonC">Add to total
+                                            list</button>
+                                        <button class="btn mt-3" onclick="rvRestart()" id="buttonC">Restart</button>
+                                        <p class="fs-5" id="text_5"></p>
+                                    </td>
+                                </tr>
+
+                                <!-- Tiramisu  -->
+                                <tr id="Tiramisu">
+                                    <td>
+                                        <h6 class="mt-2"><b>Tiramisu</b></h6>
+                                        <img src="Tiramisu.jpg" alt="" id="imgtiramisu" style="margin-bottom: 15px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="cake_3" placeholder="Type the quantity"
+                                            class="form-control bg-light">
+                                        <button class="btn mt-3" onclick="tiramisuCalo()"
+                                            id="buttonC">Calculate</button>
+                                        <button class="btn mt-3" onclick="tiramisuAdd()" id="buttonC">Add to total
+                                            list</button>
+                                        <button class="btn mt-3" onclick="tiramisuRestart()"
+                                            id="buttonC">Restart</button>
+                                        <p class="fs-5" id="text_6"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="btn" id="buttonT" onclick="chaloShow()">Show all chalories</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffc0cb"
+                            viewBox="0 0 24 24" style="display: block; margin: 0 auto; margin-top: 20px;">
+                            <path d="M12 2l7 7h-4v9h-6v-9H5l7-7z" />
+                        </svg>
+
+                        <p class="fs-6 mt-3" style="text-align: center;">
+                            This will show all the calories from the items that you have bought
+                        </p>
+                        <p id="Total"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Reviews -->
+            <section id="cus-review">
+                <div class="section container my-5 p-4 rounded shadow-sm"
+                    style="background-color: #FFF1F4; border: 1px solid #FADADD;">
+                    <h2 class="mb-3" style="color: #C44569;">☆ Customer Reviews</h2>
+                    <div class="mb-3">
+                        <input type="text" id="newReview" class="form-control" placeholder="Write a review..."
+                            style="border-radius: 12px; border: 1px solid #F5A3B7; background-color: white;">
+                    </div>
+                    <div class="mb-3 d-flex gap-2">
+                        <button onclick="addReview()" class="btn"
+                            style="background-color: #C44569; color: white; border-radius: 12px;">Submit</button>
+                        <button onclick="showReviews()" class="btn"
+                            style="background-color: #F8B5C2; color: #632C3B; border-radius: 12px;">Show All</button>
+                        <button onclick="restartReviews()" class="btn"
+                            style="background-color: #fcdbe5; color: #632C3B; border-radius: 12px;">Restart</button>
+                    </div>
+                    <div id="reviewList" class="mt-3" style="color: #D78A9C; font-weight: 500;"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer-custom mt-5 text-white pt-5 pb-3" style="font-family: 'Quicksand', sans-serif;">
+            <div class="container">
+                <div class="row">
+
+                    <!-- About -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="fw-bold">About Brewtopia</h5>
+                        <p>
+                            Brewtopia is your cozy café haven serving up matcha and pink magic in every sip. Visit us to
+                            experience flavor, comfort, and community.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="fw-bold">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="footer-link">Home</a></li>
+                            <li><a href="aboutus.html" class="footer-link">About Us</a></li>
+                            <li><a href="#order-calculator" class="footer-link">Ordering</a></li>
+                            <li><a href="#calorie-calculator" class="footer-link">Calorie Calculator</a></li>
+                            <li><a href="#cus-review" class="footer-link">Reviews</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="fw-bold">Contact</h5>
+                        <p>Email: sangria@brewtopia.cafe</p>
+                        <p>Phone: +95 943836804</p>
+                        <div>
+                            <a href="#" class="social-icon me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-icon me-3"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <hr class="border-light">
+                <div class="text-center small">
+                    &copy; 2025 Brewtopia. make with love
+                </div>
+            </div>
+        </footer>

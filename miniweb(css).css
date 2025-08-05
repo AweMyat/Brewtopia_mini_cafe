@@ -1,0 +1,386 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF1F4;
+}
+
+/* Navigation bar */
+:root {
+    --pink: #FFB6C1;
+    --matcha: #B7D6A2;
+    --text-dark: #6D6D6D;
+}
+
+/* Navbar */
+.navbar-custom {
+    background: linear-gradient(90deg, var(--matcha), var(--pink));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 16px 16px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.7rem;
+    color: white !important;
+}
+
+.navbar-brand img {
+    height: 45px;
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 1.05rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-dark) !important;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.btn-order {
+    background-color: white;
+    color: var(--matcha);
+    font-weight: bold;
+    border: 2px solid var(--matcha);
+    transition: all 0.3s ease;
+}
+
+.btn-order:hover {
+    background-color: var(--matcha);
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .navbar-brand span {
+        display: none;
+    }
+}
+
+/* About us */
+header {
+    background: linear-gradient(to bottom right, #ffdae7, #f2f9ea);
+    padding: 3rem 0;
+    color: #86586f;
+    text-align: center;
+    margin-bottom: 3rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.team-container {
+    padding: 0 2rem;
+}
+
+.team-title {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 3rem;
+    color: #86586f;
+    font-weight: 600;
+}
+
+.member-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.member-img-container {
+    height: 440px;
+    overflow: hidden;
+    position: relative;
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.member-card:hover .member-img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.member-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.member-title {
+    font-size: 1rem;
+    color: #696969;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.member-bio {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f2b0c7;
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+/* Menu */
+.card {
+    background: linear-gradient(to bottom right, #ffdae7, #f2f9ea);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: none;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.card-title {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #86586f;
+    font-weight: 600;
+}
+
+.card-body {
+    text-align: center;
+    padding: 1rem;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #609f8f;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #fbcad9;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e9a9c0;
+}
+
+.card h2 {
+    font-family: 'Quicksand', sans-serif;
+    color: #7a6f85;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 10px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+ul {
+    margin-top: 10px;
+}
+
+input,
+select {
+    padding: 6px;
+    margin: 5px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+/* Make order list items bold */
+#orderList li {
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Calorie Calculator */
+thead {
+    background-color: rgb(192, 255, 183);
+}
+
+#latte,
+#Matcha,
+#Bubble_tea,
+#Cheesecake,
+#rv_cake,
+#Tiramisu {
+    background-color: #fbcad9;
+}
+
+#buttonD,
+#buttonC {
+    background: linear-gradient(to bottom right, #ffdae7, #f2f9ea);
+    margin-bottom: 10px;
+}
+
+#buttonT {
+    background-color: #fecfe0;
+}
+
+#buttonT:hover {
+    background-color: #fddce8;
+}
+
+#imglatte,
+#imgmatcha,
+#imgbubble {
+    width: 150px;
+    height: 150px;
+    border-radius: 3%;
+}
+
+#imgcheesecake,
+#imgrvc,
+#imgtiramisu {
+    width: 150px;
+    height: 150px;
+    border-radius: 3%;
+}
+
+#drinksvg,
+#calsvg,
+#cakesvg {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align: center;
+}
+
+.table img {
+    display: block;
+    margin: 0 auto;
+}
+
+.small-text {
+    font-size: 0.9rem;
+}
+
+
+/* Footer */
+.footer-custom {
+    background: linear-gradient(90deg, #a8c686, #ffc0cb);
+    border-radius: 32px 32px 0 0;
+    color: white;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #3e3e3e;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #3e3e3e;
+}
+
+/* Banner */
+.big-title {
+    color: #C44569;
+}
+
+.small-title {
+    color: #D87590;
+}
+
+/* About us */
